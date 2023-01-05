@@ -3,13 +3,14 @@ import mysql.connector as mariadb
 class ConnectionDAO:
     con=None
     cur=None
-
+    @classmethod
     def connect(cls):
         cls.con=mariadb.connect(user="root",
                                     password="samundeeswari",
                                     database="test_sam_db"
                                     )
         cls.cur=cls.con.cursor()
+    @classmethod
     def close(cls):
         if not cls.con:
             cls.con.close()

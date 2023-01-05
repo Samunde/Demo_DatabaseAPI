@@ -1,4 +1,6 @@
 import requests
+import pandas as pa 
+from pprint import pp
 baseurl="https://rickandmortyapi.com/api/"
 endpoint='character'
 def main_request(baseurl, endpoint,x):
@@ -19,8 +21,9 @@ def parse_json(response):
     return charlist
 mainlist=[]
 data=main_request(baseurl,endpoint,1)
-for x in range(1,get_pages(data)+1):
-    print(x)
+pp(data)
+# for x in range(1,get_pages(data)+1):
+#     print(x)
 
 # data=r.json()
 # print(data['info']['pages'])
